@@ -15,12 +15,12 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/center.png "Center image"
-[image2]: ./examples/recovery.png "Recovery Image"
-[image3]: ./examples/left.png "Left Camera Image"
-[image4]: ./examples/normal.png "Normal Image"
-[image5]: ./examples/flipped.png "Flipped Image"
-[image6]: ./examples/loss.png "Loss plots during training"
+[image1]: ./images/center.png "Center image"
+[image2]: ./images/recovery.png "Recovery Image"
+[image3]: ./images/left.png "Left Camera Image"
+[image4]: ./images/normal.png "Normal Image"
+[image5]: ./images/flipped.png "Flipped Image"
+[image6]: ./images/loss.png "Loss plots during training"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
@@ -50,7 +50,7 @@ The model.py file contains the code for training and saving the convolution neur
 
 #### 1. An appropriate model architecture has been employed
 
-My model consists of a convolution neural network with 3x3 and 5x5 filter sizes and depths between 24 and 64 (model.py lines 76-88) 
+My model consists of a convolution neural network with 3x3 and 5x5 filter sizes and depths between 24 and 64 ([model.py lines 76-88](https://github.com/lx-px/BehavioralCloning/blob/master/writeup_report.md#L76-L88))
 
 The model includes RELU layers to introduce nonlinearity (code line 79-83), and the data is normalized in the model using a Keras lambda layer (code line 77). 
 
@@ -63,7 +63,7 @@ The given driving data was limited so to expose the model to different data, I t
 
 #### 3. Model parameter tuning
 
-The model used an Adam optimizer, so the learning rate was not tuned manually (model.py line 91).
+The model used an Adam optimizer, so the learning rate was not tuned manually ([model.py line 91](https://github.com/lx-px/BehavioralCloning/blob/master/writeup_report.md#L91)).
 
 #### 4. Appropriate training data
 
@@ -92,7 +92,7 @@ Since the model is well established, I focused my efforts on collecting more and
 
 #### 2. Final Model Architecture
 
-The final model architecture (model.py lines 76-88) consisted of a convolution neural network with the following layers and layer sizes:
+The final model architecture ([model.py lines 76-88](https://github.com/lx-px/BehavioralCloning/blob/master/writeup_report.md#L76-L88)) consisted of a convolution neural network with the following layers and layer sizes:
 
 | Layer no.     | Layer type           | Layer specs.                                              | 
 | ------------- | ---------------------| --------------------------------------------------------- | 
