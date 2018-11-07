@@ -20,7 +20,7 @@ The goals / steps of this project are the following:
 [image3]: ./images/left.jpg "Left Camera Image"
 [image4]: ./images/normal.jpg "Normal Image"
 [image5]: ./images/flipped.jpg "Flipped Image"
-[image6]: ./images/loss.jpg "Loss plots during training"
+[image6]: ./images/loss_plot.png "Loss plots during training"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
@@ -50,7 +50,7 @@ The model.py file contains the code for training and saving the convolution neur
 
 #### 1. An appropriate model architecture has been employed
 
-My model consists of a convolution neural network with 3x3 and 5x5 filter sizes and depths between 24 and 64 ([model.py lines 76-88](https://github.com/lx-px/BehavioralCloning/blob/master/writeup_report.md#L76-L88))
+My model consists of a convolution neural network with 3x3 and 5x5 filter sizes and depths between 24 and 64 ([model.py lines 76-88](https://github.com/lx-px/BehavioralCloning/blob/master/model.py#L76-L88))
 
 The model includes RELU layers to introduce nonlinearity (code line 79-83), and the data is normalized in the model using a Keras lambda layer (code line 77). 
 
@@ -58,12 +58,16 @@ The model includes RELU layers to introduce nonlinearity (code line 79-83), and 
 
 The given driving data was limited so to expose the model to different data, I tried the collecting data as discussed next. The training and validation losses were plotted and found to be in reasonable range before testing on autonomous mode.
 
+The number of epochs was set to 3 as the loss leveled off after 3rd epoch.
+
+The final loss decline in train and valid data is plotted here:
+
 ![alt text][image6]
 
 
 #### 3. Model parameter tuning
 
-The model used an Adam optimizer, so the learning rate was not tuned manually ([model.py line 91](https://github.com/lx-px/BehavioralCloning/blob/master/writeup_report.md#L91)).
+The model used an Adam optimizer, so the learning rate was not tuned manually ([model.py line 91](https://github.com/lx-px/BehavioralCloning/blob/master/model.py#L91)).
 
 #### 4. Appropriate training data
 
@@ -83,16 +87,16 @@ I started off with the given driving data. I synthesized more data using approac
 
 I used the generator approach to reduce memory usage by reading data in batches into the memory as needed. Further the I split the data in training and validation to keep a tap on train and validation losses. 
 
-The optimizer I chose was "Adam's" and measure "mse" losses.
+The optimizer I chose was "Adam's" and measure mean squared error, "MSE" losses.
 
-The first run showed satisfactory mse values, 0.0145 for training and 0.013 for validation. However during the autonomous run, the car had a difficult time handling the turns and went of the driving range and did not recover.
+The first run showed satisfactory MSE values however during the autonomous run, the car had a difficult time handling the turns and went of the driving range and did not recover.
 
-Since the model is well established, I focused my efforts on collecting more and variable data. I finally collected data as shown above.
+Since the model is well established, I focused my efforts on collecting more and variable data. I finally collected data as shown further.
 
 
 #### 2. Final Model Architecture
 
-The final model architecture ([model.py lines 76-88](https://github.com/lx-px/BehavioralCloning/blob/master/writeup_report.md#L76-L88)) consisted of a convolution neural network with the following layers and layer sizes:
+The final model architecture ([model.py lines 76-88](https://github.com/lx-px/BehavioralCloning/blob/master/model.py#L76-L88)) consisted of a convolution neural network with the following layers and layer sizes:
 
 | Layer no.     | Layer type           | Layer specs.                                              | 
 | ------------- | ---------------------| --------------------------------------------------------- | 
@@ -103,12 +107,11 @@ The final model architecture ([model.py lines 76-88](https://github.com/lx-px/Be
 | 5             |      2D-Convolution  | kernel = 36x5x5, strides = (2,2), activation = RELU       | 
 | 6             |      2D-Convolution  | kernel = 48x5x5, strides = (2,2), activation = RELU       |
 | 7             |      2D-Convolution  | kernel = 64x3x3, activation = RELU                        |  
-| 8             |      2D-Convolution  | kernel = 64x3x3, activation = RELU                        |  
-| 9             |      2D-Convolution  |       -                                                   |   
-| 10            |      Flatten         |       100 neurons                                         |   
-| 11            |      Dense           |       50 neurons                                          |    
-| 12            |      Dense           |       10 neurons                                          | 
-| 13            |      Dense           |       1 neurons                                           |   
+| 8             |      2D-Convolution  | kernel = 64x3x3, activation = RELU                        |   
+| 9             |      Flatten         |       100 neurons                                         |   
+| 10            |      Dense           |       50 neurons                                          |    
+| 11            |      Dense           |       10 neurons                                          | 
+| 12            |      Dense           |       1 neurons                                           |   
 
 
 
@@ -131,15 +134,33 @@ To provide a wide range of steering angles and views, I used the left and right 
 
 The data set was shuffled to avoid temporal bias. 
 
-Finally, the dataset was split into training and validation by a 80-20 % factor respectively and fed into the model in batches of 32 samples. 
+Data was further split into 80% training and 20% validation and fed into the model in batches of 32 samples. 
+
+Number of epochs were set to 3.
+
+The MSE losses were:
+For train: 0.0144
+For validation: 0.0136
+
 
 Here are some examples of training images:
 
+Center camera image:
+
 ![alt text][image1]
+
+
+Left camera image:
+
+![alt text][image3]
+
+
+Car recovering from outside of lanes:
 
 ![alt text][image2]
 
-![alt text][image3]
+
+Normal center camera image and it's flipped image:
 
 ![alt text][image4]
 
