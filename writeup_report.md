@@ -115,9 +115,6 @@ The final model architecture ([model.py lines 76-88](https://github.com/lx-px/Be
 
 
 
-Here is a visualization of the architecture (note: visualizing the architecture is optional according to the project rubric)
-
-
 
 #### 3. Creation of the Training Set & Training Process
 

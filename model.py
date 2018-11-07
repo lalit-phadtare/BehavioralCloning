@@ -17,7 +17,7 @@ from sklearn.utils import shuffle
 from sklearn.model_selection import train_test_split
 
 #dir. where the training data is stored
-dataDir = 'mydata/'
+dataDir = '../../../opt/mydata/'
 
 
 def generator(df, bsize=32):
@@ -93,7 +93,7 @@ history_object = model.fit_generator(train_generator, steps_per_epoch= \
                  len(train_df)/bsize, validation_data=validation_generator, \
                  nb_val_samples=len(validation_df)/bsize, nb_epoch=3, verbose=1)
 
-
+"""
 ### plot the training and validation loss for each epoch
 plt.plot(history_object.history['loss'])
 plt.plot(history_object.history['val_loss'])
@@ -102,6 +102,7 @@ plt.ylabel('mean squared error loss')
 plt.xlabel('epoch')
 plt.legend(['training set', 'validation set'], loc='upper right')
 plt.show()
+"""
 
 #save model
 model.save('model.h5')
