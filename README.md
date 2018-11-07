@@ -15,12 +15,12 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./images/center.png "Center image"
-[image2]: ./images/recovery.png "Recovery Image"
-[image3]: ./images/left.png "Left Camera Image"
-[image4]: ./images/normal.png "Normal Image"
-[image5]: ./images/flipped.png "Flipped Image"
-[image6]: ./images/loss.png "Loss plots during training"
+[image1]: ./images/center.jpg "Center image"
+[image2]: ./images/recovery.jpg "Recovery Image"
+[image3]: ./images/left.jpg "Left Camera Image"
+[image4]: ./images/normal.jpg "Normal Image"
+[image5]: ./images/flipped.jpg "Flipped Image"
+[image6]: ./images/loss.jpg "Loss plots during training"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
