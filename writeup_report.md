@@ -21,6 +21,11 @@ The goals / steps of this project are the following:
 [image4]: ./images/normal.jpg "Normal Image"
 [image5]: ./images/flipped.jpg "Flipped Image"
 [image6]: ./images/loss_plot.png "Loss plots during training"
+[image7]: ./images/conv2d_1_out.png "1st Conv. layer output"
+[image8]: ./images/conv2d_2_out.png "2nd Conv. layer output"
+[image9]: ./images/conv2d_3_out.png "3rd Conv. layer output"
+[image10]: ./images/conv2d_4_out.png "4th Conv. layer output"
+[image11]: ./images/conv2d_5_out.png "5th Conv. layer output"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
@@ -114,6 +119,33 @@ The final model architecture ([model.py lines 76-88](https://github.com/lx-px/Be
 | 12            |      Dense           |       1 neurons                                           |   
 
 
+Here are the model's layer vizualations for a training input image.
+
+Input Image:
+
+![alt text][image1]
+
+First convolutional layer output:
+
+![alt text][image7]
+
+Second convolutional layer output:
+
+![alt text][image8]
+
+Third convolutional layer output:
+
+![alt text][image9]
+
+Fourth convolutional layer output:
+
+![alt text][image10]
+
+Fifth convolutional layer output:
+
+![alt text][image11]
+
+I can see that the first two layers heavily detect the main road area followed by other details in thrid to fifth layers.
 
 
 #### 3. Creation of the Training Set & Training Process
